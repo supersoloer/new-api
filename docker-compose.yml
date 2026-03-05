@@ -17,7 +17,6 @@ version: '3.4' # For compatibility with older Docker versions
 services:
   new-api:
     image: calciumion/new-api:latest
-    container_name: new-api
     restart: always
     command: --log-dir /app/logs
     ports:
@@ -51,12 +50,10 @@ services:
 
   redis:
     image: redis:latest
-    container_name: redis
     restart: always
 
   postgres:
     image: postgres:15
-    container_name: postgres
     restart: always
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
@@ -69,7 +66,6 @@ services:
 
 #  mysql:
 #    image: mysql:8.2
-#    container_name: mysql
 #    restart: always
 #    environment:
 #      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
